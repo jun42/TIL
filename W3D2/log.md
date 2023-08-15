@@ -266,3 +266,12 @@ Object.keys(obj3).map(key => obj3[key]);
 //return arr of values
 
 ```
+
+## Q&A
+
+1. short circuit evaluation  
+   && || 연산에서 short circuit evaluation을 배웠는데 이 개념을 고려해서 코드를 짜야하는 경우가 있을까?
+
+### 회고
+
+타입 변환이 어렵다.
