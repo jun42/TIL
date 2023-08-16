@@ -191,3 +191,50 @@ const calcAge = function (birthYear) {
 이벤트 리스너 → 핸들러가 붙어있는 DOM 이벤트
 
 메서드는 화살표 함수x
+
+- call, apply, bind
+
+call
+
+- 함수를 호출하는 함수
+- 첫 번째 인자에 this로 세팅하고 싶은 객체를 넘김
+- 나머지 인자를 입력
+
+apply
+
+- 함수를 호출하는 함수
+- 첫 번째 인자에 this로 세팅하고 싶은 객체를 넘김
+- 나머지 인자를 배열로 입력
+
+bind
+
+- 함수를 실행하지 않고 리턴
+- 나머지 인자는 call, apply와 동일
+
+```jsx
+const koreanAir ={
+	airline: 'KoreanAir',
+	iataCode: 'KAL',
+	booking:[ ];,
+	book(flightNum, name){
+		console.log(this.airline)
+}
+
+const book = koreanAir.book
+book.call(asiana, 23, "Sara"); //this를 asiana에 바인딩
+
+const flightData = [222, "george"]
+book.apply(asiana, flightData); // call과 같은데 array를 대입.
+//==
+//book.call(asiana, ...flightData);
+
+const bookASA= book.bind(asiana); //this 바인딩한 함수를 만들어줌
+//이 함수 그냥 써주면 됨
+bookASA(66, "Rebeca");
+
+const bookASA55= book.bind(asiana,55); //this 바인딩한 함수를 만들어줌
+// 55 고정 값으로 넣어줌.
+
+```
+
+후기: 모르는 개념들이 많이 나온다. 천천히 복습하자
