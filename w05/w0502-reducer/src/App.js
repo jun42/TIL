@@ -6,6 +6,7 @@ import MainHeader from "./components/MainHeader/MainHeader";
 
 function App() {
   const context = useContext(AuthContext);
+  console.log(<MainHeader />);
 
   return (
     <>
